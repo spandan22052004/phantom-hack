@@ -1,0 +1,268 @@
+ /* Custom styles */
+ body {
+  background-color: #1a1a1a;
+  color: #fff !important;
+  font-family: 'Spooky Pumpkin', cursive !important;
+  overflow: auto;
+  overflow-x: hidden;
+  /* Allow scrolling */
+  position: relative;
+  /* Allow positioning of ghosts */
+  cursor: none
+}
+
+.hero {
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  /* Allow absolute positioning of children */
+}
+
+.countdown-timer h2 {
+  color: orange;
+  margin-bottom: 10px;
+}
+
+#timer {
+  color: white;
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+
+.video-container video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.card {
+  height: 400px;
+  /* Set a fixed height */
+  width: 100%;
+  /* Ensure the width is 100% of the column */
+  display: flex;
+  /* Enable flexbox layout */
+  flex-direction: column;
+  /* Stack children vertically */
+  justify-content: space-evenly;
+  /* Space between children for consistent layout */
+  transition: transform 0.5s, box-shadow 0.5s;
+  /* Smooth transition for transform and shadow */
+  position: relative;
+  /* Position for absolute children */
+}
+
+.card:hover {
+  transform: scale(1.1) rotate(2deg);
+  /* Zoom in and slightly rotate on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  /* Add shadow effect */
+  z-index: 1;
+  /* Bring the hovered card to the front */
+}
+
+.card-img-top {
+  height: 200px;
+  /* Set a fixed height for images */
+  object-fit: cover;
+  /* Ensure the image covers the area without distortion */
+  transition: transform 0.5s;
+  /* Smooth transition for image */
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+  /* Slightly zoom the image on hover */
+}
+
+.card-body {
+  flex-grow: 1;
+  /* Allow the body to take up remaining space */
+}
+
+
+.witch {
+  position: absolute;
+  width: 50px;
+  /* Proper size for the witch */
+  pointer-events: none;
+  /* Prevent interaction */
+  transition: transform 0.1s;
+  /* Smooth movement */
+  z-index: 101;
+  /* Bring witch above other elements */
+}
+
+.ghost {
+  width: 50px;
+  /* Size for the ghosts */
+  position: absolute;
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+  /* Floating animation */
+}
+
+#quiz {
+  background-color: #333;
+  /* Dark background for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  /* Shadow effect */
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+  /* Space between questions */
+  border-bottom: 1px solid #444;
+  /* Divider between questions */
+  padding-bottom: 10px;
+  /* Padding for better spacing */
+}
+
+.quiz-question p {
+  font-weight: bold;
+  /* Make question text bold */
+  color: #FFA500;
+  /* Orange color for question text */
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  /* Space between radio button and label */
+}
+
+.btn-warning {
+  background-color: #FF5722;
+  /* Custom orange color */
+  border-color: #FF5722;
+  /* Same color for the border */
+}
+
+#discount-window {
+  background-color: #444;
+  /* Background color for discount message */
+  color: #fff;
+  /* White text color */
+  border-radius: 10px;
+  /* Rounded corners */
+  padding: 20px;
+  /* Padding for content */
+  margin-top: 20px;
+  /* Space above discount window */
+}
+
+/* Styling for product cards */
+.product-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  padding: 15px;
+}
+
+/* On hover: add scale effect and shadow */
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Title and text */
+.product-card h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Button styling */
+.buy-now {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for button */
+.buy-now:hover {
+  background-color: #ff4c4c;
+}
+
+/* Row container styling */
+#product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .product-card {
+      width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .product-card {
+      width: 45%;
+  }
+}
+
+
+@keyframes float {
+  0% {
+      transform: translateY(0);
+  }
+
+  50% {
+      transform: translateY(-10px);
+  }
+
+  100% {
+      transform: translateY(0);
+  }
+}
+
+@keyframes moveAround {
+  0% {
+      top: 0;
+      left: 0;
+  }
+
+  100% {
+      top: 100vh;
+      left: 100vw;
+  }
+}
